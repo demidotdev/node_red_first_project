@@ -2,7 +2,11 @@
     "name": "Node_Red_Curso",
     "description": "Primer proyecto Node-RED desplegado en Github",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "@flowfuse/node-red-dashboard": "1.30.2",
+        "@flowfuse/node-red-dashboard-2-ui-led": "1.1.0",
+        "node-red-contrib-modbus": "5.60.2"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
