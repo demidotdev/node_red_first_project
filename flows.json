@@ -1,0 +1,1262 @@
+[
+    {
+        "id": "b8f6a935265222bb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "05b9f85150192188",
+        "type": "tab",
+        "label": "Flujo 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1db4dc18465b783e",
+        "type": "tab",
+        "label": "Flujo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eb7cf4139be428d0",
+        "type": "tab",
+        "label": "Flujo 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c3e3128b30ef10b8",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "82c28cc3322abf75",
+        "type": "tab",
+        "label": "Mi Primer Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "49761d91044ff616",
+        "type": "subflow",
+        "name": "Coil Reader",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 340,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "d9b150eb44832e7f"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 900,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "723220cdf24dd0d5",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Address",
+                "type": "num",
+                "value": ""
+            },
+            {
+                "name": "Quantity",
+                "type": "num",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "3ccd9a456c4e6bbe",
+        "type": "subflow",
+        "name": "Calcula Valor Máximo",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 420,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "ed2ea51cdb01873e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1220,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "08e14acc37176ac4",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Ruta",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "Columna",
+                "type": "env",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "4c4e09851b28c5bb",
+        "type": "group",
+        "z": "eb7cf4139be428d0",
+        "name": "CSV",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#c8e7a7",
+            "fill-opacity": "0.59",
+            "label": true
+        },
+        "nodes": [
+            "fb3ddddf1d933995",
+            "09e7a0ac416176f6",
+            "2583efa5f98d8d2f",
+            "de3757cfbc118cfa",
+            "07b0654f85ab9327",
+            "7408bc64ee1c29ba",
+            "b06f02515f7f5be0",
+            "f3ff60f4b5f3fa41",
+            "d9c4f14b3ec36881",
+            "5d5d4e2151e7e88d"
+        ],
+        "x": 34,
+        "y": 119,
+        "w": 1032,
+        "h": 242
+    },
+    {
+        "id": "d248facf8e2bdea5",
+        "type": "group",
+        "z": "82c28cc3322abf75",
+        "name": "Control de motor",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bf5af413a7918e91",
+            "894a785938a4f1c6",
+            "205d4d08cf6b4403",
+            "55234fd2594ae76f",
+            "76d6e573fd258656",
+            "c9f5555fa80d8e2d"
+        ],
+        "x": 74,
+        "y": 59,
+        "w": 432,
+        "h": 222
+    },
+    {
+        "id": "99c3c1c7a5cecb77",
+        "type": "modbus-client",
+        "name": "Modbus_Slave",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "278062044e686a3a",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "home",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "215de7863d0e791c",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "6e96e7d64b60c93d",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "278062044e686a3a",
+        "path": "/home",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "215de7863d0e791c",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "6279e40ce9992201",
+        "type": "ui-group",
+        "name": "Control de motor",
+        "page": "6e96e7d64b60c93d",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d9b150eb44832e7f",
+        "type": "function",
+        "z": "49761d91044ff616",
+        "name": "Read Coil",
+        "func": "msg.payload = {\n    value: msg.payload,\n    'fc': 1,\n    'unitId': 1,\n    'address': env.get(\"Address\"),\n    'quantity': env.get(\"Quantity\")\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "723220cdf24dd0d5"
+            ]
+        ]
+    },
+    {
+        "id": "723220cdf24dd0d5",
+        "type": "modbus-flex-getter",
+        "z": "49761d91044ff616",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "server": "99c3c1c7a5cecb77",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 710,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ed2ea51cdb01873e",
+        "type": "file in",
+        "z": "3ccd9a456c4e6bbe",
+        "name": "datosCSV",
+        "filename": "Ruta",
+        "filenameType": "env",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "81bd425fb80b67e9"
+            ]
+        ]
+    },
+    {
+        "id": "81bd425fb80b67e9",
+        "type": "csv",
+        "z": "3ccd9a456c4e6bbe",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 800,
+        "y": 240,
+        "wires": [
+            [
+                "08e14acc37176ac4"
+            ]
+        ]
+    },
+    {
+        "id": "08e14acc37176ac4",
+        "type": "function",
+        "z": "3ccd9a456c4e6bbe",
+        "name": "Potencia Máxima",
+        "func": "let arraycsv = msg.payload;\nlet columna = env.get(\"Columna\");\nlet nmro_registros = arraycsv.length;\n\nmsg.index = nmro_registros;\n\nflow.set(\"valor_maximo\", arraycsv[0][columna]);\n\nfor (let i = 0; i < nmro_registros; i++) {\n    if (flow.get(\"valor_maximo\") < arraycsv[i][columna]) {\n        flow.set(\"valor_maximo\", arraycsv[i][columna]);\n    }\n}\n\nmsg.payload = flow.get(\"valor_maximo\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd84ec5e831c6427",
+        "type": "inject",
+        "z": "b8f6a935265222bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "dc7b6f155120d013"
+            ]
+        ]
+    },
+    {
+        "id": "dc7b6f155120d013",
+        "type": "function",
+        "z": "b8f6a935265222bb",
+        "name": "function 8",
+        "func": "msg.payload = \"Felicidades, has completado el ejercicio\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "d5c76bde1e1729f6"
+            ]
+        ]
+    },
+    {
+        "id": "d5c76bde1e1729f6",
+        "type": "debug",
+        "z": "b8f6a935265222bb",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a6dc2e0227696911",
+        "type": "debug",
+        "z": "b8f6a935265222bb",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "59813eac2f0bedcb",
+        "type": "inject",
+        "z": "b8f6a935265222bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hola mundo!",
+        "payloadType": "str",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a978df155a5851f5",
+        "type": "link in",
+        "z": "b8f6a935265222bb",
+        "name": "link in 1",
+        "links": [],
+        "x": 525,
+        "y": 380,
+        "wires": [
+            [
+                "a6dc2e0227696911"
+            ]
+        ]
+    },
+    {
+        "id": "952b756df0b1911d",
+        "type": "inject",
+        "z": "05b9f85150192188",
+        "name": "Ejercicio 2 -inject",
+        "props": [
+            {
+                "p": "n1",
+                "v": "25",
+                "vt": "num"
+            },
+            {
+                "p": "n2",
+                "v": "30",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "ecb36efb26d1c48f"
+            ]
+        ]
+    },
+    {
+        "id": "ecb36efb26d1c48f",
+        "type": "function",
+        "z": "05b9f85150192188",
+        "name": "Ejercicio 2 - function",
+        "func": "let r = msg.n1 + msg.n2;\nif( r > 50) {\n    msg.payload = r;\n} else {\n    msg.payload = null;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "95a4f99d6d8d5f02"
+            ]
+        ]
+    },
+    {
+        "id": "95a4f99d6d8d5f02",
+        "type": "link call",
+        "z": "05b9f85150192188",
+        "name": "",
+        "links": [
+            "a978df155a5851f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 420,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef5a25107165fde5",
+        "type": "modbus-read",
+        "z": "1db4dc18465b783e",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "8",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "99c3c1c7a5cecb77",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "80c3979fcb5cdb91"
+            ],
+            [
+                "45c169bae7c3f1d0"
+            ]
+        ]
+    },
+    {
+        "id": "80c3979fcb5cdb91",
+        "type": "debug",
+        "z": "1db4dc18465b783e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "45c169bae7c3f1d0",
+        "type": "debug",
+        "z": "1db4dc18465b783e",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fb3ddddf1d933995",
+        "type": "file in",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "datosCSV",
+        "filename": "D:\\TOSHH\\Cursos\\Industria 4.0\\Especialización Ind 4.0\\NodeRED\\Descargas\\datos.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "de3757cfbc118cfa"
+            ]
+        ]
+    },
+    {
+        "id": "09e7a0ac416176f6",
+        "type": "inject",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "fb3ddddf1d933995"
+            ]
+        ]
+    },
+    {
+        "id": "2583efa5f98d8d2f",
+        "type": "debug",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "de3757cfbc118cfa",
+        "type": "csv",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "07b0654f85ab9327"
+            ]
+        ]
+    },
+    {
+        "id": "07b0654f85ab9327",
+        "type": "function",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "Potencia Máxima",
+        "func": "let arraycsv = msg.payload;\nlet nmro_registros = arraycsv.length;\n\nmsg.index = nmro_registros;\n\nflow.set(\"potencia_max\", arraycsv[0].potencia);\n\nfor (let i = 0; i < nmro_registros; i++) {\n    if (flow.get(\"potencia_max\") < arraycsv[i].potencia) {\n        flow.set(\"potencia_max\", arraycsv[i].potencia);\n    }\n}\n\nmsg.payload = flow.get(\"potencia_max\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 160,
+        "wires": [
+            [
+                "2583efa5f98d8d2f"
+            ]
+        ]
+    },
+    {
+        "id": "7408bc64ee1c29ba",
+        "type": "file in",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "datosCSV",
+        "filename": "D:\\TOSHH\\Cursos\\Industria 4.0\\Especialización Ind 4.0\\NodeRED\\Descargas\\datos.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "d9c4f14b3ec36881"
+            ]
+        ]
+    },
+    {
+        "id": "b06f02515f7f5be0",
+        "type": "inject",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "7408bc64ee1c29ba"
+            ]
+        ]
+    },
+    {
+        "id": "f3ff60f4b5f3fa41",
+        "type": "debug",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d9c4f14b3ec36881",
+        "type": "csv",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "5d5d4e2151e7e88d"
+            ]
+        ]
+    },
+    {
+        "id": "5d5d4e2151e7e88d",
+        "type": "function",
+        "z": "eb7cf4139be428d0",
+        "g": "4c4e09851b28c5bb",
+        "name": "Corriente promedio",
+        "func": "let arraycsv = msg.payload;\nlet nmro_registros = arraycsv.length;\n\nmsg.index = nmro_registros;\n\nflow.set(\"corriente_promedio\", arraycsv[0].corriente);\nlet corrientePromedio = flow.get(\"corriente_promedio\");\n\nfor (let i = 0; i < nmro_registros; i++) {\n    let corrienteActual = arraycsv[i].corriente\n    if (corrientePromedio){\n        corrientePromedio += corrienteActual;\n    }\n    flow.set(\"corriente_promedio\", (corrientePromedio/nmro_registros).toFixed(2));\n}\n\nmsg.payload = flow.get(\"corriente_promedio\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "f3ff60f4b5f3fa41"
+            ]
+        ]
+    },
+    {
+        "id": "7d7530a6540a984e",
+        "type": "subflow:3ccd9a456c4e6bbe",
+        "z": "eb7cf4139be428d0",
+        "name": "",
+        "env": [
+            {
+                "name": "Ruta",
+                "value": "D:\\TOSHH\\Cursos\\Industria 4.0\\Especialización Ind 4.0\\NodeRED\\Descargas\\datos.csv",
+                "type": "str"
+            },
+            {
+                "name": "Columna",
+                "value": "corriente",
+                "type": "str"
+            }
+        ],
+        "x": 640,
+        "y": 560,
+        "wires": [
+            [
+                "d80c38f924ede62f"
+            ]
+        ]
+    },
+    {
+        "id": "bcd4ad2fbb7de230",
+        "type": "inject",
+        "z": "eb7cf4139be428d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "7d7530a6540a984e"
+            ]
+        ]
+    },
+    {
+        "id": "d80c38f924ede62f",
+        "type": "debug",
+        "z": "eb7cf4139be428d0",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "0dce1e95f57e40c2",
+        "type": "inject",
+        "z": "c3e3128b30ef10b8",
+        "name": "",
+        "props": [
+            {
+                "p": "timestamp",
+                "v": "iso",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "b641a7172e2451bc"
+            ]
+        ]
+    },
+    {
+        "id": "3550410d055e7053",
+        "type": "debug",
+        "z": "c3e3128b30ef10b8",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "timestamp",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b641a7172e2451bc",
+        "type": "trigger",
+        "z": "c3e3128b30ef10b8",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "3550410d055e7053"
+            ]
+        ]
+    },
+    {
+        "id": "5e9b87a7d0428b48",
+        "type": "inject",
+        "z": "c3e3128b30ef10b8",
+        "name": "",
+        "props": [
+            {
+                "p": "reset",
+                "v": "reset",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 200,
+        "wires": [
+            [
+                "b641a7172e2451bc"
+            ]
+        ]
+    },
+    {
+        "id": "bf5af413a7918e91",
+        "type": "ui-led",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "name": "Estado motor",
+        "group": "6279e40ce9992201",
+        "order": 5,
+        "width": "3",
+        "height": "2",
+        "label": "Estado motor",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#e3e3e3"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 410,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "894a785938a4f1c6",
+        "type": "ui-button",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "group": "6279e40ce9992201",
+        "name": "ON",
+        "label": "Encender LED",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "205d4d08cf6b4403",
+        "type": "ui-button",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "group": "6279e40ce9992201",
+        "name": "OFF",
+        "label": "Apagar LED",
+        "order": 3,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55234fd2594ae76f",
+        "type": "ui-led",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "name": "Estado Falla",
+        "group": "6279e40ce9992201",
+        "order": 6,
+        "width": "3",
+        "height": "2",
+        "label": "Estado Falla",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#e3e3e3"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#ffe438"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 410,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "76d6e573fd258656",
+        "type": "ui-template",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "group": "6279e40ce9992201",
+        "page": "",
+        "ui": "",
+        "name": "Imagen Motor",
+        "order": 2,
+        "width": "3",
+        "height": "4",
+        "head": "",
+        "format": "<style>\n    .node-center-wrapper {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        overflow: hidden;\n        box-sizing: border-box;\n        padding: 10px;\n    }\n\n    .resize-fit {\n        max-width: 100%;\n        max-height: 100%;\n        object-fit: contain;\n\n    }\n</style>\n\n<div class=\"node-center-wrapper\">\n    <img src=\"http://localhost:1880/static/img/motor.jpg\" class=\"resize-fit\">\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9f5555fa80d8e2d",
+        "type": "ui-text",
+        "z": "82c28cc3322abf75",
+        "g": "d248facf8e2bdea5",
+        "group": "6279e40ce9992201",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "name": "RPM",
+        "label": "Velocidad del motor [RPM]:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 390,
+        "y": 220,
+        "wires": []
+    }
+]
